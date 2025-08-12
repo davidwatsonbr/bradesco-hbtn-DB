@@ -1,0 +1,19 @@
+# Arquivos do sistema (macOS)
+.DS_Store
+
+# Configurações do IntelliJ IDEA
+.idea/
+*.iml
+
+# Pastas de build do Maven
+target/
+
+# Banco SQLite gerado
+database_admin.db
+
+# Arquivos temporários e logs
+*.log
+*.tmp
+
+# Arquivos compilados Java
+*.class
