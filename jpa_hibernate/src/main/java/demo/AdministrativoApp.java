@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 import entities.Pessoa;
 import entities.Produto;
-import model.PessoaModel;
-import model.ProdutoModel;
+import models.PessoaModel;
+import models.ProdutoModel;
 
 public class AdministrativoApp {
 
