@@ -6,6 +6,11 @@ import java.util.List;
 
 @Entity
 public class Professor {
+
+    public Professor() {
+        this.cursos = new ArrayList<>();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

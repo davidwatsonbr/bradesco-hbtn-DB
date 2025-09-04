@@ -1,7 +1,6 @@
 package entities;
 
-import jakarta.persistence.ManyToOne;
-
+import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -52,5 +51,8 @@ public class Endereco {
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
+        if (!aluno.getEnderecos().contains(this)) {
+            aluno.getEnderecos().add(this);
+        }
     }
 }

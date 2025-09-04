@@ -1,11 +1,9 @@
 package demo;
 
-import entities.Aluno;
-import entities.Endereco;
-import entities.Telefone;
+import entities.*;
+import models.AlunoModel;
+import models.CursoModel;
 
-import entities.Curso;
-import entities.Professor;
 import java.time.LocalDate;
 import java.util.Date;
 import java.time.ZoneId;
@@ -16,14 +14,10 @@ public class GestaoCursosMain {
         professor.setNomeCompleto("Teacher");
         professor.setMatricula("PROF01");
         professor.setEmail("teacher@gmail.com");
-        professor.setCursos(null)
 
         Curso curso = new Curso();
         curso.setNome("Enfermagem");
         curso.setSigla("ENF");
-        curso.setProfessor(null);
-        curso.setAlunos(null);
-        curso.setMaterial(null);
 
         Aluno aluno = new Aluno();
         aluno.setNomeCompleto("Jack Enf");
@@ -45,6 +39,21 @@ public class GestaoCursosMain {
         endereco.setEstado("SP");
         endereco.setCep(02017012);
         endereco.setAluno(aluno);
+
+        MaterialCurso materialCurso = new MaterialCurso();
+        materialCurso.setCurso(curso);
+        materialCurso.setUrl("www.enfermagemjack.com.br");
+
+        // criando relacionamentos
+        professor.adicionarCurso(curso);
+        curso.adicionarProfessor(professor);
+        curso.adicionarAluno(aluno);
+        curso.adicionarMaterial(materialCurso);
+
+        CursoModel cursoModel = new CursoModel();
+        AlunoModel alunoModel = new AlunoModel();
+        cursoModel.create(curso);
+        alunoModel.create(aluno);
         /*
         c) Para fazer um teste completo, sua aplicação GestaoCursosMain.java
         deverá popular todas as tabelas do banco de dados, ou seja,

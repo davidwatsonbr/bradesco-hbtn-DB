@@ -1,7 +1,6 @@
 package entities;
 
-import jakarta.persistence.ManyToOne;
-
+import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,5 +26,8 @@ public class Telefone {
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
+        if (!aluno.getTelefones().contains(this)) {
+            aluno.getTelefones().add(this);
+        }
     }
 }

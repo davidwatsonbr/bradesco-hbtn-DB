@@ -21,5 +21,8 @@ public class MaterialCurso {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+        if (curso.getMaterial() != this) {
+            curso.adicionarMaterial(this);
+        }
     }
 }
